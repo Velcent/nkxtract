@@ -76,7 +76,7 @@ namespace nkxtract
       byte[] cryptedCounter = new byte[16];
       byte[] counter = k.riv.ToArray();
       int counterLoc = 0;
-      using (AesManaged aesAlg = new AesManaged())
+      using (Aes aesAlg = Aes.Create())
       {
         aesAlg.Mode = CipherMode.ECB;
         aesAlg.BlockSize = 128;
